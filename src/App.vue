@@ -25,16 +25,14 @@ const savedState = () => {
 };
 
 onMounted(() => {
-  const getData = localStorage.getItem("formData");
-  if (getData) {
-    const parsedData = JSON.parse(getData);
-    text.value = parsedData.text;
-    checked.value = parsedData.checked;
-    checkedNames.value = parsedData.checkedNames;
-    picked.value = parsedData.picked;
-    select.value = parsedData.select;
-    multiSelect.value = parsedData.multiSelect;
-  }
+  const getData = JSON.parse(localStorage.getItem("formData"));
+
+  text.value = getData.text || "";
+  checked.value = getData.checked || "";
+  checkedNames.value = getData.checkedNames || "";
+  picked.value = getData.picked || "";
+  select.value = getData.select || "";
+  multiSelect.value = getData.multiSelect || "";
 });
 </script>
 
