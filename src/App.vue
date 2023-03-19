@@ -11,7 +11,7 @@ const multiSelect = ref(["A"]);
 const savedState = () => {
   const formData = {
     text: text.value,
-    checked: checked.value.value,
+    checked: checked.value,
     checkedNames: checkedNames.value,
     picked: picked.value,
     select: select.value,
